@@ -1,0 +1,6 @@
+pip install pyqt5
+pip install Pillow
+pip install matplotlib
+pip install opencv-python
+pip install --upgrade google-cloud-vision
+pip install cx_Freeze
