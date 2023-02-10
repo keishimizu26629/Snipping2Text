@@ -1,10 +1,11 @@
 from google.cloud import vision
 from google.oauth2 import service_account
 import pyperclip
+import glob
 
 def image_to_text(img_bytes):
-
-    credentials = service_account.Credentials.from_service_account_file('./api-key/snipping-ocr.json')
+    files = glob.glob('./api-key/*.json')
+    credentials = service_account.Credentials.from_service_account_file(files[0])
 
     # Instantiates a client
     client = vision.ImageAnnotatorClient(credentials=credentials)

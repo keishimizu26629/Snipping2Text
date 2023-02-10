@@ -4,14 +4,23 @@ from cx_Freeze import setup, Executable
 build_exe_options = {
     "packages": [
         "tkinter",
+        "sys",
+        "PySide2",
+        "PIL",
+        "io",
+        "ctypes",
+        "google.cloud",
+        "google.oauth2",
+        "pyperclip",
+        "glob",
+        "environment_check",
+        "cloud_vision"
     ],
     "excludes": [
-        "pandas",
     ],
     # 取り込みたいファイルやフォルダ名を記載します。
     "include_files": [
-        "test.csv",
-        "tests/"
+        "api-key/"
     ],
 }
 
@@ -20,15 +29,15 @@ if sys.platform == "win32":
     base = "Win32GUI"
 
 setup(
-    name="MyApp",
-    version="0.1",
-    description="My GUI application!",
+    name="Snipping2Text",
+    version="0.5",
+    description="Crop the image and convert it to text.",
     options={
         "build_exe": build_exe_options,
     },
     executables=[
         Executable(
-            script="myApp.py",
+            script="Snipping2Text.py",
             base=base,
         ),
     ],

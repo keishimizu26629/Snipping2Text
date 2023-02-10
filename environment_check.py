@@ -1,6 +1,6 @@
 import ctypes
 from ctypes.wintypes import RECT
-from PyQt5 import QtWidgets
+from PySide2 import QtWidgets
 import sys
 
 def get_monitors_size_and_position():
